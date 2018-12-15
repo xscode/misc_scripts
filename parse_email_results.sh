@@ -7,7 +7,7 @@
 #author		     :StuW
 #date            :15-12-2018
 #version         :0.1   
-#usage		     :parse_email_results.sh <hashcat output file>
+#usage		       :parse_email_results.sh <hashcat output file>
 #===============================================================================
   
 SOURCE_FILE=$1
