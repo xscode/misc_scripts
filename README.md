@@ -1,4 +1,4 @@
-# misc scripts #
+# Misc Scripts #
 Somewhere to store my miscellaneous scripts and such.
 
 ## parse_email_results.sh ##
