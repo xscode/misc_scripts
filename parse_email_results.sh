@@ -27,11 +27,11 @@ then
     echo "Parsing " $SOURCE_FILE " usernames into usernames.txt..."
     cut -d':' -f2 $SOURCE_FILE | cut -s -d'@' -f1 | sort | uniq > usernames.txt
     echo "Parsing " $SOURCE_FILE " domains into domains.txt..."
-    cut -d':' -f2 $SOURCE_FILE  | cut -d'@' -f2 | sort | sed 's/^M//g' | uniq> domains.txt
+    cut -d':' -f2 $SOURCE_FILE  | cut -d'@' -f2 | sort | sed 's/\r/g' | uniq> domains.txt
     echo "Parsing " $SOURCE_FILE " username frequencies into username_frequency.txt..."
-    cut -d':' -f2 $SOURCE_FILE | cut -s -d'@' -f1 | sort | uniq -c | sed 's/^M//g' | sort -nr > username_frequency.txt
+    cut -d':' -f2 $SOURCE_FILE | cut -s -d'@' -f1 | sort | uniq -c | sort -nr > username_frequency.txt
     echo "Parsing " $SOURCE_FILE " domain frequencies into domain_frequency.txt..."
-    cut -d':' -f2 $SOURCE_FILE | cut -s -d'@' -f2 | sort | uniq -c | sed 's/^M//g' | sort -nr > domain_frequency.txt
+    cut -d':' -f2 $SOURCE_FILE | cut -s -d'@' -f2 | sort | uniq -c | sed 's/\r//g' | sort -nr > domain_frequency.txt
     exit
 fi
 
